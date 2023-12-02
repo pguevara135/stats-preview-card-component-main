@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&family=Overpass&display=swap');
+
+/* !    font-family: 'Inter', sans-serif;
+ !      font-family: 'Lexender Deca', sans-serif;  */
+
+:root {
+    --very-dark-blue-main-background: hsl(233, 47%, 7%);
+    --dark-desaturated-blue-card-background: hsl(244, 38%, 16%);
+    --soft-violet-accent: #aa5cdb;
+    --white-main-heading-stats: #ffffff;
+    --slightly-transparent-white-main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    list-style: none;
+}
+
+.lexender {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+    background-color: var(--dark-desaturated-blue-card-background);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 130px;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    width: 50%;background-color: var(--dark-desaturated-blue-card-background);
+    padding: 55px;
+    border-radius: 10px 0 0 10px;
+}
+
+h1 span {
+    color: var(--soft-violet-accent);
+}
+
+h1, h2 {
+    color: var(--white-main-heading-stats);
+    font-size: 28px;
+}
+
+.datas {
+    display: flex;
+    gap: 1.5rem;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h6 {
+    color: var(--slightly-transparent-white-stat-headings);
+    text-transform: uppercase;
+    padding: 12px 0;
+    letter-spacing: .1rem;
+}
+
+p {
+    color: var(--slightly-transparent-white-main-paragraph);
+    font-size: 15px;
+    line-height: 26px;
+    margin: 30px 0 50px 0;
+}
+
+.image {
+    width: 50%;
+    background-image: url(images/image-header-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 10px 10px 0;
+    position: relative;
+}
+
+.image::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--soft-violet-accent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+    border-radius: 0 10px 10px 0;
+}
+
+@media only screen and ( max-width: 375px ) {
+    body{
+        height: 100vh;
+        padding: 50px 20px;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column-reverse;
+        padding: 80px 0 10px 0;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        padding: 20px 0 0;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .card p {
+        margin: 20px 0 25px 0;
+    }
+
+    .datas {
+        flex-direction: column;
+    }
+
+    h6 {
+        padding: 0;
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .image::after {
+        border-radius: 10px 10px 0 0;
+    }
+}
